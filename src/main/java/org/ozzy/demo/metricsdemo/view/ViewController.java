@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import io.micrometer.core.annotation.Timed;
+
 @Controller
 public class ViewController {
 
@@ -31,21 +33,21 @@ public class ViewController {
     }
 
     //index page
-
+    @Timed
     @GetMapping({"/",""})
     public String index(Model model) {
         return "index";        
     }
 
     //addalarm page (invokes POST /addalarm)
-
+    @Timed
     @GetMapping("/addalarm")
     public String showSignUpForm(Alarm alarm) {
         return "add-alarm";
     }
 
     //edit page, invokes POST /update/{id}
-
+    @Timed
     @GetMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") Long id, Model model) {
         Alarm alarm = alarms.getById(id);
@@ -57,9 +59,9 @@ public class ViewController {
     }
 
     //callbacks from pages.
-
+    @Timed
     @PostMapping("/addalarm")
-    public String addUser(@Valid Alarm alarm, BindingResult result, Model model) {
+    public String addAlarm(@Valid Alarm alarm, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "add-alarm";
         }
@@ -67,6 +69,7 @@ public class ViewController {
         return "redirect:/";
     }  
     
+    @Timed
     @PostMapping("/update/{id}")
     public String updateAlarm(@PathVariable("id") long id, @Valid Alarm alarm, 
       BindingResult result, Model model) {
@@ -78,6 +81,7 @@ public class ViewController {
         return "redirect:/";
     }  
     
+    @Timed
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") long id, Model model) {
         Alarm alarm = alarms.getById(id);

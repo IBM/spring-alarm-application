@@ -28,7 +28,7 @@
                         <div class=""><h3 class="bg-primary text-white"><span th:text="${time}"></span></h3></div>
                         <div class=""><a th:href="@{/}" class="btn btn-primary"><i class="fas fa-sync-alt"></i></a></div>
                     </div>                      
-                    <table class="table table-striped table-responsive-md">
+                    <table class="col-md-6 table table-striped table-responsive-md">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -48,7 +48,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div>            
     </div>
     <div th:switch="${#lists.size(alarms)}" class="container my-1">
         <div class="row">
@@ -75,7 +75,8 @@
                                     </span>
                                 </a>
                             </div>                        
-                    </div>                       
+                    </div>       
+                    <div class="panel-body">
                     <table class="table table-striped table-responsive-md">
                         <thead>
                             <tr>
@@ -89,7 +90,7 @@
                         </thead>
                         <tbody>
                             <tr th:each="alarm : ${alarms}">
-                                <td th:text="${alarm.name}"></td>
+                                <td style="word-break:break-all;" th:text="${alarm.name}"></td>
                                 <td th:text="${alarm.start}"></td>
                                 <td th:text="${alarm.end}"></td>
                                 <td th:text="${alarm.priority}"></td>
@@ -98,9 +99,10 @@
                             </tr>
                         </tbody>
                     </table>
+                    </div>                
                 </div>
             </div>
-        </div>
+        </div>            
     </div>
 </body>
 
