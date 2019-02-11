@@ -1,10 +1,11 @@
-package org.ozzy.demo.metricsdemo.metrics;
+package com.example.spring.actuatorsdemo.metrics;
 
 import java.sql.Time;
 import java.time.Instant;
 
-import org.ozzy.demo.metricsdemo.persistence.Alarms;
 import org.springframework.stereotype.Component;
+
+import com.example.spring.actuatorsdemo.persistence.Alarms;
 
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;

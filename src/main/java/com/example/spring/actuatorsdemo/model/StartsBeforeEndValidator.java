@@ -1,11 +1,11 @@
-package org.ozzy.demo.metricsdemo.model;
+package com.example.spring.actuatorsdemo.model;
 
 import java.sql.Time;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import org.ozzy.demo.metricsdemo.model.dto.Alarm;
+import com.example.spring.actuatorsdemo.model.dto.Alarm;
 
 /**
  * Logic for @StartsBeforeEnd annotation. 

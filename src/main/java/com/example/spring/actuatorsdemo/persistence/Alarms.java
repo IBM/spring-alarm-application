@@ -1,12 +1,13 @@
-package org.ozzy.demo.metricsdemo.persistence;
+package com.example.spring.actuatorsdemo.persistence;
 
 import java.sql.Time;
 import java.util.List;
 
-import org.ozzy.demo.metricsdemo.model.dao.Alarm;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 import org.springframework.data.repository.query.Param;
+
+import com.example.spring.actuatorsdemo.model.dao.Alarm;
 
 /**
  * Spring Data Repository for Alarm Data Access Objects. 

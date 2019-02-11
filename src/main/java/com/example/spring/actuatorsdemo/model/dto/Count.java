@@ -1,4 +1,4 @@
-package org.ozzy.demo.metricsdemo.model.dto;
+package com.example.spring.actuatorsdemo.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,7 +1,6 @@
-package org.ozzy.demo.metricsdemo;
+package com.example.spring.actuatorsdemo;
 
 import org.modelmapper.ModelMapper;
-import org.ozzy.demo.metricsdemo.metrics.AlarmMetrics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
@@ -10,14 +9,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+import com.example.spring.actuatorsdemo.metrics.AlarmMetrics;
+
 @SpringBootApplication
-public class MetricsdemoApplication {
+public class ActuatorsdemoApplication {
 
     @Autowired
     AlarmMetrics metrics;
 
     public static void main(String[] args) {
-        SpringApplication.run(MetricsdemoApplication.class, args);
+        SpringApplication.run(ActuatorsdemoApplication.class, args);
     }
 
     @Bean

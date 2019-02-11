@@ -1,12 +1,10 @@
-package org.ozzy.demo.metricsdemo.view;
+package com.example.spring.actuatorsdemo.view;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import javax.validation.Valid;
 
-import org.ozzy.demo.metricsdemo.model.dto.Alarm;
-import org.ozzy.demo.metricsdemo.rest.AlarmsController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +14,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.spring.actuatorsdemo.model.dto.Alarm;
+import com.example.spring.actuatorsdemo.rest.AlarmsController;
 
 import io.micrometer.core.annotation.Timed;
 
@@ -65,6 +66,7 @@ public class ViewController {
     }
 
     //callbacks from pages.
+
     @PostMapping("/addalarm")
     public String addAlarm(@Valid Alarm alarm, BindingResult result, Model model) {
         if (result.hasErrors()) {

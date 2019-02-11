@@ -8,10 +8,10 @@
 		<version>2.1.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.ozzy.demo</groupId>
-	<artifactId>metricsdemo</artifactId>
+	<groupId>com.example.spring</groupId>
+	<artifactId>actuatorsdemo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>metricsdemo</name>
+	<name>actuatorsdemo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

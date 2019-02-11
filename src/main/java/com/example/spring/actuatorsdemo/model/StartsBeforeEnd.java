@@ -1,4 +1,4 @@
-package org.ozzy.demo.metricsdemo.model;
+package com.example.spring.actuatorsdemo.model;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

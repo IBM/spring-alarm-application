@@ -1,11 +1,11 @@
-package org.ozzy.demo.metricsdemo.model.dto;
+package com.example.spring.actuatorsdemo.model.dto;
 
 import java.sql.Time;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-import org.ozzy.demo.metricsdemo.model.StartsBeforeEnd;
+import com.example.spring.actuatorsdemo.model.StartsBeforeEnd;
 
 import lombok.Data;
 import lombok.ToString;

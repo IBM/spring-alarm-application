@@ -1,4 +1,4 @@
-package org.ozzy.demo.metricsdemo.rest;
+package com.example.spring.actuatorsdemo.rest;
 
 import java.sql.Time;
 import java.time.Instant;
@@ -6,9 +6,6 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
-import org.ozzy.demo.metricsdemo.model.dto.Alarm;
-import org.ozzy.demo.metricsdemo.model.dto.Count;
-import org.ozzy.demo.metricsdemo.persistence.Alarms;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.spring.actuatorsdemo.model.dto.Alarm;
+import com.example.spring.actuatorsdemo.model.dto.Count;
+import com.example.spring.actuatorsdemo.persistence.Alarms;
 
 import io.micrometer.core.annotation.Timed;
 import io.micrometer.core.instrument.Counter;
@@ -99,7 +100,7 @@ public class AlarmsController {
     public Alarm addAlarm(@RequestBody Alarm toAdd) {
         //update the save counter (we should really only do this on a successful save!)
         saveCounter.increment();
-        return mapper.map(alarms.save(mapper.map(toAdd, org.ozzy.demo.metricsdemo.model.dao.Alarm.class)),Alarm.class);
+        return mapper.map(alarms.save(mapper.map(toAdd, com.example.spring.actuatorsdemo.model.dao.Alarm.class)),Alarm.class);
     }
 
     @DeleteMapping({"/{id}"})

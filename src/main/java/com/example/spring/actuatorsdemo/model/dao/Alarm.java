@@ -1,4 +1,4 @@
-package org.ozzy.demo.metricsdemo.model.dao;
+package com.example.spring.actuatorsdemo.model.dao;
 
 import java.sql.Time;
 

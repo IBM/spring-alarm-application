@@ -1,4 +1,4 @@
-package org.ozzy.demo.metricsdemo.config;
+package com.example.spring.actuatorsdemo.config;
 
 import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.context.annotation.Configuration;
