@@ -1,6 +1,5 @@
 package org.ozzy.demo.metricsdemo.view;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -16,15 +15,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import io.micrometer.core.annotation.Timed;
 
+/**
+ * A (very) simple UI thrown together using Spring MVC.
+ * Note that all all actual business logic is deferred to the REST api methods.
+ * Eventually this UI will be replaced with something shiny, modern, and Javascripty.
+ * Until then, this will have to do =)
+ */
 @Controller
+@RequestMapping("/web")
 public class ViewController {
 
     @Autowired
     AlarmsController alarms;
 
+    //Add these attributes to the model for every page.
     @ModelAttribute
     public void populateModel(Model model){
         model.addAttribute("time", DateTimeFormatter.ofPattern("HH:mm:ss").format(LocalDateTime.now()));
@@ -33,14 +41,12 @@ public class ViewController {
     }
 
     //index page
-    @Timed
     @GetMapping({"/",""})
     public String index(Model model) {
         return "index";        
     }
 
     //addalarm page (invokes POST /addalarm)
-    @Timed
     @GetMapping("/addalarm")
     public String showSignUpForm(Alarm alarm) {
         return "add-alarm";
@@ -59,17 +65,15 @@ public class ViewController {
     }
 
     //callbacks from pages.
-    @Timed
     @PostMapping("/addalarm")
     public String addAlarm(@Valid Alarm alarm, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "add-alarm";
         }
         alarms.addAlarm(alarm);
-        return "redirect:/";
+        return "redirect:/web";
     }  
     
-    @Timed
     @PostMapping("/update/{id}")
     public String updateAlarm(@PathVariable("id") long id, @Valid Alarm alarm, 
       BindingResult result, Model model) {
@@ -78,10 +82,9 @@ public class ViewController {
             return "update-alarm";
         }     
         alarms.addAlarm(alarm);
-        return "redirect:/";
+        return "redirect:/web";
     }  
     
-    @Timed
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") long id, Model model) {
         Alarm alarm = alarms.getById(id);
@@ -89,7 +92,7 @@ public class ViewController {
             throw new IllegalArgumentException("Invalid alamrm id: "+id);
         }   
         alarms.deleteAlarm(alarm.getId());
-        return "redirect:/";
+        return "redirect:/web";
     }
 
 }

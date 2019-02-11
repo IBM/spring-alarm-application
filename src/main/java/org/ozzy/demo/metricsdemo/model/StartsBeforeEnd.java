@@ -8,6 +8,13 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
+/**
+ * Annotation that can be used to enforce 
+ * start before end on Alarm DTOs.
+ * 
+ * This is the annotation part, the logic is in the 
+ * 'validatedBy' class StartsBeforeEndValidator.class
+ */
 @Constraint(validatedBy = StartsBeforeEndValidator.class)
 @Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)

@@ -7,6 +7,10 @@ import javax.validation.ConstraintValidatorContext;
 
 import org.ozzy.demo.metricsdemo.model.dto.Alarm;
 
+/**
+ * Logic for @StartsBeforeEnd annotation. 
+ * Tests an Alarm to ensure the Start time is before the End time.
+ */
 public class StartsBeforeEndValidator 
   implements ConstraintValidator<StartsBeforeEnd, Alarm> {
 
@@ -22,6 +26,8 @@ public class StartsBeforeEndValidator
         if (start !=null && end != null){
             return start.before(end);
         } else {
+            //if either start or end is absent, we fail validation.
+            //cannot test that which we do not have!
             return false;
         }
     }

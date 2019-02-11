@@ -10,7 +10,6 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/shards.min.css">
 </head>
 
 <body>
@@ -19,7 +18,7 @@
         <div class="row">
             <div class="col-md-6">
 
-                <form action="#" th:action="@{/update/{id}(id=${alarm.id})}" th:object="${alarm}" method="post">
+                <form action="#" th:action="@{/web/update/{id}(id=${alarm.id})}" th:object="${alarm}" method="post">
                     <table class="table">
                         <tr>
                             <td>

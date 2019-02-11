@@ -10,7 +10,6 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/shards.min.css">
 </head>
 
 <body>
@@ -20,13 +19,13 @@
                 <div th:case="'0'" class="my-1 d-flex bg-primary text-white">
                     <div class="mr-auto"><h3 class="bg-primary text-white">No Active Alarms At :</h3></div>
                     <div class=""><h3 class="bg-primary text-white"><span th:text="${time}"></span></h3></div>
-                    <div class=""><a th:href="@{/}" class="btn btn-primary"><i class="fas fa-sync-alt"></i></a></div>
+                    <div class=""><a th:href="@{/web/}" class="btn btn-primary"><i class="fas fa-sync-alt"></i></a></div>
                 </div>                
                 <div th:case="*">
                     <div class="my-1 d-flex bg-primary text-white">
                         <div class="mr-auto"><h3 class="bg-primary text-white">Active Alarms At :</h3></div>
                         <div class=""><h3 class="bg-primary text-white"><span th:text="${time}"></span></h3></div>
-                        <div class=""><a th:href="@{/}" class="btn btn-primary"><i class="fas fa-sync-alt"></i></a></div>
+                        <div class=""><a th:href="@{/web/}" class="btn btn-primary"><i class="fas fa-sync-alt"></i></a></div>
                     </div>                      
                     <table class="col-md-6 table table-striped table-responsive-md">
                         <thead>
@@ -56,7 +55,7 @@
                 <div th:case="'0'" class="my-1 d-flex bg-primary text-white">
                     <div class="mr-auto"><h3 class="bg-primary text-white">No Alarms Configured.</h3></div>
                     <div>
-                        <a href="/addalarm" class="btn btn-primary">
+                        <a href="/web/addalarm" class="btn btn-primary">
                             <span>
                                 <i class="fas fa-clock"></i>
                                 <i class="fas fa-plus-square"></i>
@@ -68,7 +67,7 @@
                     <div class="my-1 d-flex bg-primary text-white">
                         <div class="mr-auto"><h3 class="bg-primary text-white">Alarms</h3></div>
                         <div>
-                                <a href="/addalarm" class="btn btn-primary">
+                                <a href="/web/addalarm" class="btn btn-primary">
                                     <span>
                                         <i class="fas fa-clock"></i>
                                         <i class="fas fa-plus-square"></i>
@@ -94,8 +93,8 @@
                                 <td th:text="${alarm.start}"></td>
                                 <td th:text="${alarm.end}"></td>
                                 <td th:text="${alarm.priority}"></td>
-                                <td><a th:href="@{/edit/{id}(id=${alarm.id})}" class="btn btn-primary"><i class="fas fa-edit"></i></a></td>
-                                <td><a th:href="@{/delete/{id}(id=${alarm.id})}" class="btn btn-primary"><i class="fas fa-trash-alt"></i></a></td>
+                                <td><a th:href="@{/web/edit/{id}(id=${alarm.id})}" class="btn btn-primary"><i class="fas fa-edit"></i></a></td>
+                                <td><a th:href="@{/web/delete/{id}(id=${alarm.id})}" class="btn btn-primary"><i class="fas fa-trash-alt"></i></a></td>
                             </tr>
                         </tbody>
                     </table>
