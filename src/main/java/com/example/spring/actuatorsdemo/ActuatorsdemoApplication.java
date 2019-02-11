@@ -1,15 +1,14 @@
 package com.example.spring.actuatorsdemo;
 
+import com.example.spring.actuatorsdemo.metrics.AlarmMetrics;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
-import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
+import org.springframework.boot.actuate.endpoint.Endpoint;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-
-import com.example.spring.actuatorsdemo.metrics.AlarmMetrics;
 
 @SpringBootApplication
 public class ActuatorsdemoApplication {
@@ -26,12 +25,26 @@ public class ActuatorsdemoApplication {
         return new ModelMapper();
     }
 
-    // Simple custom liveness check
-    @Endpoint(id = "liveness")
     @Component
-    public class Liveness {
-        @ReadOperation
-        public String testLiveness() {
+    public class LivenessEndpoint implements Endpoint<String> {
+        
+        @Override
+        public String getId() {
+            return "liveness";
+        }
+
+        @Override
+        public boolean isEnabled() {
+            return true;
+        }
+
+        @Override
+        public boolean isSensitive() {
+            return false;
+        }
+
+        @Override
+        public String invoke() {
             return "{\"status\":\"UP\"}";
         }
     }

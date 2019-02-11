@@ -1,6 +1,5 @@
 package com.example.spring.actuatorsdemo.config;
 
-import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -20,9 +19,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             //disable spring csrf protection.
             .disable()        
         .authorizeRequests()
-            //allow access to the specified actuator endpoints
-            .requestMatchers(EndpointRequest.to("health","metrics","prometheus","liveness"))
-                .permitAll()
             //allow access to the rest api
             .antMatchers("/alarms/**")
                 .permitAll()
