@@ -13,27 +13,26 @@ import org.springframework.stereotype.Component;
 @SpringBootApplication
 public class MetricsdemoApplication {
 
-	@Autowired
-	AlarmMetrics metrics;
+    @Autowired
+    AlarmMetrics metrics;
 
-	public static void main(String[] args) {
-		SpringApplication.run(MetricsdemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MetricsdemoApplication.class, args);
+    }
 
-	@Bean 
-	public ModelMapper mapper(){
-		return new ModelMapper();
-	}
+    @Bean
+    public ModelMapper mapper() {
+        return new ModelMapper();
+    }
 
-	//Simple custom liveness check
-	@Endpoint(id="liveness")
-	@Component
-	  public class Liveness {
-		  @ReadOperation
-		  public String testLiveness() {
-				  return "{\"status\":\"UP\"}";
-		  }
-	  }	
+    // Simple custom liveness check
+    @Endpoint(id = "liveness")
+    @Component
+    public class Liveness {
+        @ReadOperation
+        public String testLiveness() {
+            return "{\"status\":\"UP\"}";
+        }
+    }
 
 }
-
