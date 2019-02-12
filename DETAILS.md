@@ -1,5 +1,11 @@
 # Details
 
+- [Health Check](#health-check)
+- [Spring Metrics](#spring-metrics)
+- [Prometheus Endpoint](#prometheus-endpoint)
+- [Custom Actuator](#custom-actuator)
+- [OpenLiberty Boost](#openliberty-boost)
+
 ## Health check 
 
 The health check endpoint is supplied via Spring Actuator. 
