@@ -2,7 +2,7 @@
 
 **Boot 1.5.x Version**
 
-An example application written with Sprint Boot, showing simple usage of Spring Actuators, Metrics, Spring Data, ModelMapper and Lombok.
+An example application written with Spring Boot, showing simple usage of Spring Actuators, Metrics, Spring Data, ModelMapper and Lombok.
 
 ## Compiling
 
