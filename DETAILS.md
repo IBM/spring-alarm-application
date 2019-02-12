@@ -56,7 +56,7 @@ that implement the `HealthIndicator` interface, and they will be taken into acco
 For more information, check the [Spring Documentation for Health Information](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html#production-ready-health)
 
 > **Note:** although it is very simple to author your own REST endpoint for health checks in Spring, doing so means you 
-> lose this aggreation behavior, and may miss out on application health issues that Spring is aware of.
+> lose this aggregation behavior, and may miss out on application health issues that Spring is aware of.
   
 ## Spring metrics
 
