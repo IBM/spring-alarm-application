@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"></meta>
     <title>Add User</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+        crossorigin="anonymous"></link>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-        crossorigin="anonymous">
+        crossorigin="anonymous"></link>
 </head>
 
 <body>
@@ -26,7 +26,7 @@
                                 <label for="name">Name</label>
                             </td>
                             <td>
-                                <input type="text" th:field="*{name}" id="name" placeholder="Name">
+                                <input type="text" th:field="*{name}" id="name" placeholder="Name"></input>
                             </td>
                             <td>
                                 <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
@@ -37,7 +37,7 @@
                                 <label for="start">Start</label>
                             </td>
                             <td>
-                                <input type="time" step="1" th:field="*{start}" id="start" placeholder="12:00:00"> 
+                                <input type="time" step="1" th:field="*{start}" id="start" placeholder="12:00:00"></input>
                             </td>
                             <td>
                                 <span th:if="${#fields.hasErrors('start')}" th:errors="*{start}"></span>
@@ -48,7 +48,7 @@
                                 <label for="end">End</label>
                             </td>
                             <td>
-                                <input type="time" step="1" th:field="*{end}" id="end" placeholder="12:05:00"> 
+                                <input type="time" step="1" th:field="*{end}" id="end" placeholder="12:05:00"></input> 
                             </td>
                             <td>
                                 <span th:if="${#fields.hasErrors('end')}" th:errors="*{end}"></span>
@@ -60,7 +60,7 @@
                             </td>
                             <td>
                                 <input type="range" class="form-control-range" th:field="*{priority}" id="priority" min="0"
-                                    max="10" value="0">
+                                    max="10" value="0"></input>
                             </td>
                             <td>
                                 <span th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}"></span>
@@ -76,7 +76,7 @@
                             </tr>                        
                         <tr>
                             <td>
-                                <input type="submit" value="Add Alarm">
+                                <input type="submit" value="Add Alarm"></input>
                             </td>
                         </tr>
                     </table>
